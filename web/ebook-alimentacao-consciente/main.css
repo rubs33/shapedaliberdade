@@ -1,0 +1,672 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #444;
+  font-family:  sans-serif;
+  line-height: 1.5;
+}
+
+p {
+  margin: 2rem 0 0 0;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+ul li {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+}
+ul li:first-child {
+  margin-top: 0;
+}
+
+ul.no-style {
+  list-style: none;
+}
+ul.no-style li {
+  margin-left: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #eee;
+  width: 50%;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.container p.cta {
+  text-align: center;
+}
+a.cta {
+  position: relative;
+  overflow: hidden;
+
+  display:inline-block;
+  white-space:nowrap;
+  padding:1rem 2rem;
+  margin: 1rem auto;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:1.8rem;
+  font-weight:600;
+  text-decoration:none;
+  text-shadow: 1px 1px 2px #000;
+  color:#fff;
+  border-radius:0.75rem;
+  background:#28a745;
+  background:linear-gradient(120deg, #28a745 0%, #218838 100%);
+  box-shadow:0 0.375rem 1.125rem rgba(0,0,0,0.12);
+  text-transform: uppercase;
+}
+a.cta:hover {
+  background:linear-gradient(120deg, #34c759 0%, #218838 100%);
+  box-shadow:0 0.375rem 1.125rem rgba(0,0,0,0.32);
+}
+a.cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s;
+}
+a.cta:hover::after {
+  left: 200%;
+}
+
+a.cta.alternative {
+  background-color: #3757FF;
+  background: linear-gradient(120deg, #3757FF 0%, #2b45cc 100%)
+}
+a.cta.alternative:hover {
+  background-color: #3757FF;
+  background: linear-gradient(120deg, #5A75FF 0%, #2b45cc 100%)
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* evita quebra de linha */
+  border: 0;
+}
+
+/* ========================
+   Barra fixa no topo
+======================== */
+.top-bar {
+  color: #fff;
+  position: fixed;
+  border-bottom: 1px solid #222;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #555;
+  color: #fff;
+  text-shadow: 1px 1px 2px #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+.top-bar-text {
+  font-size: 0.9rem;
+}
+
+.cta-button {
+  background-color: #ff6600;
+  background:linear-gradient(120deg, #ff6600 0%, #cc5200 100%);
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #e65c00;
+  background:linear-gradient(120deg, #ff6600 0%, #e65c00 100%);
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ========================
+   Header / Hero
+======================== */
+.hero {
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  height: 50vh;
+  background-image: url('./imgs/top-header.png');
+  background-size: cover;
+  background-position: top right;
+  margin-top: 50px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  padding-left: 1rem;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.small-title {
+  font-size: 1.5rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+
+/* ========================
+   About
+======================== */
+.about {
+  font-size: 1.7rem;
+  padding: 2rem 0;
+}
+
+/* ========================
+   Args
+======================== */
+.arg-why {
+  background-color: #EEE;
+  padding: 2rem 0;
+  font-size: 1.3rem;
+}
+.arg-why p.main {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.arg-who {
+  padding: 1rem 0;
+  font-size: 1.3rem;
+}
+.arg-who p.main {
+  margin: 3rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.arg-who .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.arg-who .card {
+  background-color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: translateY(0);
+
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.arg-who .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 8px rgba(0,0,0,0.1);
+
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.arg-who .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.arg-who .card figcaption {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #333;
+  padding: 1rem;
+}
+
+.arg-long p.main, .arg-modules p.main {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+}
+.arg-long ul, .arg-modules ul {
+  margin-top: 2rem;
+}
+.arg-long ul li, .arg-modules ul li {
+  color: #e5e5e5;
+}
+.arg-long ul li:hover, .arg-modules ul li:hover {
+  color: #fff;
+}
+
+.arg-modules {
+  background-color: rgba(58,58,58,1);
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 2rem;
+}
+
+.arg-long {
+  background-color: rgba(58,58,58,1);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 2rem;
+  margin: 2rem 0 0 0;
+}
+
+.arg-modules ul li {
+  margin-top: 1rem;
+}
+
+.arg-content {
+  position: relative;
+  background-image: url('./imgs/tablet.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 4rem 1rem;
+  overflow: hidden;
+  text-shadow: 0px 0px 5px #fff;
+}
+.arg-content .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  transition: background-color 1s ease;
+}
+.arg-content:hover .overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: background-color 0.5s ease;
+}
+
+.arg-content .container {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: left;
+}
+.arg-content p.main {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 2rem 0;
+  text-align: left;
+}
+.arg-content ul li {
+  font-size: 1.6rem;
+  margin: 5rem 0;
+}
+
+.arg-price {
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+.arg-price .container {
+  max-width: 600px;
+}
+.arg-price p.main {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.arg-price p.main b {
+  color: #dd00dd;
+}
+
+/* ========================
+   Author
+======================== */
+.author {
+  background: #5c7e5c url('./imgs/iuna-fricke-sm.png') top center;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  padding: 4rem 0;
+}
+.author h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.author .content {
+  font-size: 1.2rem;
+}
+.author .content p {
+  text-align: justify;
+}
+
+/* ========================
+   Info
+======================== */
+.info {
+  font-size: 1.4rem;
+  padding: 4rem 0;
+  text-align: center;
+}
+.info .columns {
+}
+.info .column {
+  padding: 0 3rem;
+  margin-top: 3rem;
+}
+
+#support:before {
+  content: '';
+  display: inline-block;
+  background: url('./imgs/support.png') top center no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 72px;
+}
+
+#access:before {
+  content: '';
+  display: inline-block;
+  background: url('./imgs/access.png') top center no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 72px;
+}
+
+/* ========================
+   FAQ
+======================== */
+
+.faq {
+  padding: 4rem 1rem;
+}
+
+.faq .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.faq details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq details[open] {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #3757ff;
+  list-style: none;
+  outline: none;
+}
+.faq summary:hover,
+.faq summary:focus {
+  text-decoration: underline;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::before {
+  content: "+";
+  color: #3757ff;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  min-width: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.faq details[open] summary::before {
+  content: "–";
+}
+
+.faq p {
+  margin: 0.8rem 0 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ========================
+   Footer
+======================== */
+.pre-footer {
+  height: 312px;
+  background-image: url('./imgs/footer.png');
+  background-size: cover;
+  background-position: center top;
+  overflow: hidden;
+  margin-top: 8rem;
+}
+footer {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+footer .container p {
+  text-align: center;
+}
+
+/* ========================
+   Breakpoints
+======================== */
+
+/* Tablet */
+@media (min-width: 600px) {
+  .hero {
+    height: 65vh;
+  }
+
+  .small-title {
+    font-size: 2rem;
+  }
+
+  .main-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    max-width: 80%;
+    padding-left: 2rem;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .arg-who .cards {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .arg-long ul {
+    column-count: 2;
+  }
+  .arg-long ul li {
+    break-inside: avoid;
+  }
+
+  .arg-modules {
+    background: url('./imgs/iuna-fricke-modules.png') top right no-repeat;
+    background-size: cover;
+    border-width: 3px 0;
+    border-color: #000;
+    border-style: solid;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  .arg-modules .container {
+    padding: 0;
+  }
+  .arg-modules .content {
+    background-color: rgba(58, 58, 58, 0.95);
+    border: 5px solid #222;
+    border-radius: 30px;
+    padding: 1.5rem 2rem 2rem 2rem;
+    width: 65%;
+  }
+  .arg-price p.main {
+    font-size: 4rem;
+  }
+
+  .author {
+    background: #5c7e5c url('./imgs/iuna-fricke-sm.png') top center no-repeat;
+    background-size: cover;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container p {
+    text-align: justify;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .small-title {
+    font-size: 2.2rem;
+  }
+
+  .main-title {
+    font-size: 4.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-content {
+    max-width: 60%;
+    padding-left: 1rem;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .top-bar {
+    padding: 1rem 2rem;
+  }
+
+  .top-bar-text {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .info .columns {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+  }
+  .info .column {
+    flex: 1;
+  }
+  .info .column p {
+    text-align: center;
+  }
+
+  .arg-modules {
+    padding: 6rem 1rem;
+  }
+  .arg-modules .content {
+    width: 50%;
+  }
+
+  .author {
+    background: #5c7e5c url('./imgs/iuna-fricke.png') top left no-repeat;
+    background-size: contain;
+  }
+  .author .content {
+    padding: 0 0 0 50%;
+  }
+}
