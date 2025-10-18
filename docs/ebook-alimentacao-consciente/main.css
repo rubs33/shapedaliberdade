@@ -1,3 +1,12 @@
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -573,6 +582,18 @@ a.cta {
       color: #dd00dd;
     }
   }
+
+  .price {
+    transform: scale(1);
+    display: inline-block;
+    transition: transform 0.6s ease;
+  }
+
+  &:hover {
+    .price {
+      animation: pulse 1s ease-in-out infinite;
+    }
+  }
 }
 
 /* ========================
@@ -605,31 +626,24 @@ a.cta {
   a {
     color: #F5F5FF;
   }
+
+  .heart {
+    transform: scale(1);
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    .heart {
+      animation: pulse 0.6s ease-in-out infinite;
+    }
+  }
 }
 @supports (background-image: url('x.webp')) {
   .author {
     background-image: url('./imgs/iuna-fricke-sm.webp');
   }
 }
-.heart {
-  transform: scale(1);
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-}
-
-.author:hover .heart {
-  animation: pulse 0.6s ease-in-out infinite;
-}
-
 
 /* ========================
    Info
