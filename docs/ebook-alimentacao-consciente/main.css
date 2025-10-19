@@ -586,13 +586,7 @@ a.cta {
   .price {
     transform: scale(1);
     display: inline-block;
-    transition: transform 0.6s ease;
-  }
-
-  &:hover {
-    .price {
-      animation: pulse 1s ease-in-out infinite;
-    }
+    animation: pulse 1s ease-in-out infinite;
   }
 }
 
